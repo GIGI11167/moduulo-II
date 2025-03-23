@@ -1,0 +1,57 @@
+#1. Crear una base de datos: - llamada Escuela 
+
+CREATE DATABASE Escuela;
+
+#2. Crear una tabla:- crea una tabla llamada Estudiantes con las siguientes columnas:
+
+CREATE TABLE Estudiantes(
+Id INT,
+Nombre VARCHAR(100),
+Edad INT,
+Grado VARCHAR(100)
+);
+
+#3. Insertar datos:
+
+INSERT INTO Estudiantes VALUES (1,"juan",15,"Decimo");
+INSERT INTO Estudiantes VALUES (2,"Maria",16,"primer año");
+INSERT INTO Estudiantes VALUES (3,"Carlos",14,"noveno");
+
+# 4. Seleccionar registros:
+- Escribe una consulta para obtener todos los registros 
+de la tabla Estudiantes. en mysql
+
+SELECT * FROM Estudiantes;
+
+# 5. Filtrar registros:
+ - Escribe una consulta para mostrar solo los estudiantes que tienen 15 años o más.
+
+SELECT * FROM Estudiantes WHERE edad >= 15;
+
+# 6. Actualizar datos:
+  - Actualiza el registro de Juan para que su edad sea 16.
+
+UPDATE Estudiantes SET edad = 16 WHERE nombre = "Juan";
+
+# 7. Eliminar registros:
+   - Elimina a Carlos de la tabla Estudiantes.
+
+DELETE FROM Estudiantes WHERE nombre = "Carlos";
+
+# 8. Ordenar datos:
+   - Escribe una consulta para mostrar los estudiantes
+ ordenados por su edad en orden ascendente.
+
+SELECT * FROM Estudiantes ORDER BY edad ASC;
+
+#9. Contar registros:
+   - Escribe una consulta para contar cuántos 
+estudiantes hay en la tabla.
+
+SELECT COUNT(*) FROM Estudiantes;
+
+#10. Consultar con condiciones múltiples:
+    - Muestra los estudiantes que están en 
+10º "Decimo" grado y tienen 15 años.
+
+SELECT * FROM Estudiantes WHERE grado = "Decimo" AND edad = 15;
