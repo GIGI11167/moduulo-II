@@ -287,3 +287,401 @@ input.addEventListener('input', () => {
     message.textContent = input.value;
 });
     </script>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mayor o menor</title>
+</head>
+<body>
+
+<form method="post" action="">
+    Número 1: <input type="number" name="num1" required><br>
+    Número 2: <input type="number" name="num2" required><br>
+    Número 3: <input type="number" name="num3" required><br>
+    <input type="submit" value="mostrar">
+</form>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mayor o menor</title>
+</head>
+<body>
+
+<form method="post" action="">
+    Número 1: <input type="number" name="num1" required><br>
+    Número 2: <input type="number" name="num2" required><br>
+    Número 3: <input type="number" name="num3" required><br>
+    <input type="submit" value="mostrar">
+</form>
+
+<!--  1 ejercicio 1. Ordenar tres números:
+- Pide al usuario que ingrese tres números.
+- Utiliza condicionales para determinar el orden de los números de menor a mayor.
+- Muestra los números ordenados.
+
+
+-->
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recogemos los valores del formulario
+    $num1 = $_POST['num1'];
+    $num2 = $_POST['num2'];
+    $num3 = $_POST['num3'];
+
+    // Calculamos el mayor
+    $mayor = $num1;
+    if ($num2 > $mayor) {
+        $mayor = $num2;
+    }
+    if ($num3 > $mayor) {
+        $mayor = $num3;
+    }
+
+    // Calculamos el menor
+    $menor = $num1;
+    if ($num2 < $menor) {
+        $menor = $num2;
+    }
+    if ($num3 < $menor) {
+        $menor = $num3;
+    }
+
+// Ordenamos los números de mayor a menor con comparaciones directas
+
+if (($num1 >= $num2) && ($num2 >= $num3)) {
+    echo "<p>$num1 <br> $num2 <br> $num3</p>";
+} elseif (($num1 >= $num3) && ($num3 >= $num2)) {
+    echo "<p>$num1 <br> $num3 <br> $num2</p>";
+} elseif (($num2 >= $num1) && ($num1 >= $num3)) {
+    echo "<p>$num2 <br> $num1 <br> $num3</p>";
+} elseif (($num2 >= $num3) && ($num3 >= $num1)) {
+    echo "<p>$num2 <br> $num3 <br> $num1</p>";
+} elseif (($num3 >= $num1) && ($num1 >= $num2)) {
+    echo "<p>$num3 <br> $num1 <br> $num2</p>";
+} else { 
+    echo "<p>$num3 <br> $num2 <br> $num1</p>";
+}
+
+    // Mostramos el resultado
+    echo "<p>El número mayor es: $mayor</p>";
+    echo "<p>El número menor es: $menor</p>";
+}
+
+<!-- 
+2. Calculadora simple:
+- Pide al usuario que ingrese dos números y una operación (+, -, *, /).
+- Realiza la operación y muestra el resultado.
+
+
+-->
+
+
+?>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> tabla de multiplicacion</title>
+</head>
+<body>
+
+<form method="post" action="">
+    ingrese el primer numero: <input type="number" name="num1" required><br>
+
+
+    <input type="submit" value="mostrar">
+</for<m>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recogemos los valores del formulario
+    $num1 = $_POST['num1'];
+
+    $num1 = parseInt(numero, 10);
+    if (!isNaN($num1)) {
+        echo "<p>Tabla de multiplicación para $num1 </p>";
+        for ( i = 1; i <= 10; i++) {
+            echo "<p> $num1 * +i </p>";
+        }
+    } else {
+        echo "<p>Por favor ingrese un número válido.</p>";
+
+}
+}
+?>
+
+</body>
+</html>
+
+
+<!-- 
+3. Tabla de multiplicar:
+- Pide al usuario que ingrese un número.
+- Muestra la tabla de multiplicar de ese número del 1 al 10.
+
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla de Multiplicación</title>
+</head>
+<body>
+
+<form method="post">
+    Ingrese un número: <input type="number" name="num1" required><br><br>
+    <input type="submit" value="Mostrar">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recogemos los valores del formulario
+    $num1 = $_POST['num1'];
+
+    // Validar si es un número
+    if (is_numeric($num1)) {
+        echo "<p>Tabla de multiplicación para $num1:</p>";
+        for ($i = 1; $i <= 10; $i++) {
+            echo "<p>$num1 * $i = " . ($num1 * $i) . "</p>";
+        }
+    } else {
+        echo "<p>Por favor ingrese un número válido.</p>";
+    }
+}
+?>
+
+</body>
+</html>
+
+<!-- 
+5. Suma de números pares:
+- Crea un bucle que sume todos los números pares del 1 al 100.
+- Muestra el resultado final.
+
+-->
+
+<?php
+
+$numero = 100; 
+$pares = 0; 
+
+for($i = $numero; $i >= 0; $i--){ 
+if($i % 2 == 0){ 
+    $pares = $pares + $i; 
+}
+
+} 
+echo "<p>La suma de los numeros pares es igual a: $pares</p>";
+
+?>
+
+</body>
+</html>
+
+<!-- php
+
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>contador de vocales</title>
+</head>
+<body>
+
+<form method="post" action="">
+
+    ingrese una frase o palabra: <input type="text" name="pa1" required><br>
+
+    <input type="submit" value="mostrar">
+</for<m>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recogemos los valores del formulario
+    $pa1 = $_POST['pa1'];
+
+  for ($i = 0; $i < texto.length; $i++) {
+    $caracter = texto[$i];
+    if (vocales.includes($caracter)) {
+      $contador++;
+    }
+  }
+
+  return $contador;
+}
+       
+?>
+
+</body>
+</html>
+
+<!-- 
+php
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Palabras</title>
+</head>
+<body>
+
+<form method="post" action="">
+
+    ingrese una frase o palabra: <input type="text" name="pa1" required><br>
+
+    <input type="submit" value="mostrar">
+</for<m>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recogemos los valores del formulario
+    $pa1 = $_POST['pa1'];
+
+    // Convertimos la frase a minúsculas para simplificar la comparación
+    $pa1 = strtolower($pa1);
+
+    $vocales = ['a', 'e', 'i', 'o', 'u'];
+    $contador = 0;
+
+    for ($i = 0; $i < strlen($pa1); $i++) {
+        $caracter = $pa1[$i];
+        if (in_array($caracter, $vocales)) {
+            $contador++;
+        }
+    }
+
+    echo "<p>La frase o palabra ingresada tiene $contador vocales.</p>";
+}
+?>
+
+</body>
+</html>
+
+<!-- 
+php
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>temperatura</title>
+</head>
+<body>
+
+<form method="post" action="">
+
+    ingrese una  grados celsius: <input type="number" name="gra" required><br>
+    <input type="submit" value="mostrar">
+</for<m>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recogemos los valores del formulario
+    $gra = $_POST['gra'];
+
+    $far= ($gra*1.8)+32;
+    echo "<p>La temperatura en fahrenheit es de: $far °F </p>";
+}
+?>
+
+</body>
+</html>
+
+<!-- 
+php
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mayor o menor</title>
+</head>
+<body>
+
+<form method="post" action="">
+    Ingrese su edad: <input type="number" name="edad" required><br>
+    <input type="submit" value="mostrar">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recogemos los valores del formulario
+    $edad = $_POST['edad'];
+
+if ($edad >= 18) {
+    echo "<p>Usted es mayor de edad</p>";
+} else { 
+    echo "<p>Usted es menor de edad</p>";
+}
+}
+?>
+
+</body>
+</html>
+
+<!-- 
+php
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mayor o menor</title>
+</head>
+<body>
+
+<?php
+session_start();
+
+if (!isset($_SESSION['numero_aleatorio'])) {
+    $_SESSION['numero_aleatorio'] = rand(1, 100);
+}
+
+$adivinanzaCorrecta = false; // Variable para verificar si la adivinanza es correcta
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $adivinanza = $_POST['adivinanza'];
+
+    if ($adivinanza < $_SESSION['numero_aleatorio']) {
+        echo "El número es mayor. Intenta nuevamente.";
+    } elseif ($adivinanza > $_SESSION['numero_aleatorio']) {
+        echo "El número es menor. Intenta nuevamente.";
+    } else {
+        echo "¡Felicidades! Adivinaste el número.";
+        $adivinanzaCorrecta = true; // Cambiamos a verdadero si se adivina correctamente
+        session_destroy(); // Reiniciar juego
+    }
+}
+
+// Solo mostramos el formulario si la adivinanza no fue correcta
+if (!$adivinanzaCorrecta) {
+?>
+    <form method="post">
+        Adivina el número (entre 1 y 100): <input type="number" name="adivinanza" required><br>
+        <input type="submit" value="Adivinar">
+    </form>
+<?php
+}
+?>
+
+</body>
+</html>
+
